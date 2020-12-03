@@ -1,5 +1,3 @@
-console.log('Привет 🤖');
-
 const { Client, MessageAttachment } = require('discord.js');
 const client = new Client();
 
