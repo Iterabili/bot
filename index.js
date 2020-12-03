@@ -2,7 +2,6 @@ console.log('Привет 🤖');
 
 const { Client, MessageAttachment } = require('discord.js');
 const client = new Client();
-client.login('NzgxNzQyMDg5OTI2NDc1Nzg2.X8CEDg.TK-JBzU57PEr-qllN4n2cYl8Go0');
 
 client.on('message', newMsg);
 client.on("guildMemberAdd", async member => {
@@ -87,3 +86,5 @@ function newMsg(message) {
         }
     }
 }
+
+client.login(process.env.BOT_TOKEN);
