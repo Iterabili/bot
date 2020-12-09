@@ -78,8 +78,9 @@ function newMsg(message) {
                     message.reply('А кого бонькать-то?');
                 }
             } else {
-                const attachment = new MessageAttachment('https://sun9-58.userapi.com/impf/c846323/v846323367/dd28c/ajYlhqcWf0w.jpg?size=1080x555&quality=96&proxy=1&sign=81675e8aad4df704b879634c10b0642e');
+                const attachment = new MessageAttachment('https://pm1.narvii.com/7090/6d8a103cbb6f5f916a925df3279616566fa32106r1-768-1024v2_uhq.jpg');
                 message.reply('Ха-ха', attachment);
+                message.member.voice.kick('Боньк)))');
             }
         }
     }
