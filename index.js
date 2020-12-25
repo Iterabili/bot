@@ -32,9 +32,9 @@ function newMsg(message) {
                 message.delete();
             }
         }
-    if (message.content.startsWith('!help')) {
+    if (message.content.startsWith('!!help')) {
             if (message.channel.name === 'команды-боту'  || message.channel.name === 'бот') {
-                message.channel.send("```!addrole\n!removerole\n!боньк```");
+                message.channel.send("```!addrole @username @rolename\n!removerole @username @rolename\n!боньк @username\n!clear number```");
                 
             } 
     }
