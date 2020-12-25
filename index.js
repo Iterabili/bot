@@ -32,8 +32,14 @@ function newMsg(message) {
                 message.delete();
             }
         }
+    if (message.content.startsWith('!help ')) {
+            if (message.channel.name === 'команды-боту'  || message.channel.name === 'бот') {
+                message.channel.send("!addrole\n!removerole\n!боньк");
+                }
+            } 
+    }
     if (message.content.startsWith('!addrole ')) {
-            if (message.channel.name === 'команды-боту') {
+            if (message.channel.name === 'команды-боту'  || message.channel.name === 'бот') {
                 const user = message.mentions.users.first();
                 if (user) {
                     const member = message.guild.member(user);
@@ -48,7 +54,7 @@ function newMsg(message) {
             } 
     }
     if (message.content.startsWith('!removerole ')) {
-        if (message.channel.name === 'команды-боту') {
+       if (message.channel.name === 'команды-боту'  || message.channel.name === 'бот') {
                 const user = message.mentions.users.first();
                 if (user) {
                     const member = message.guild.member(user);
