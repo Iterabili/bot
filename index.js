@@ -32,7 +32,7 @@ function newMsg(message) {
                 message.delete();
             }
         }
-    if (message.content.startsWith('!help ')) {
+    if (message.content.startsWith('!help')) {
             if (message.channel.name === 'команды-боту'  || message.channel.name === 'бот') {
                 message.channel.send("!addrole\n!removerole\n!боньк");
                 }
@@ -54,7 +54,7 @@ function newMsg(message) {
             } 
     }
     if (message.content.startsWith('!removerole ')) {
-       if (message.channel.name === 'команды-боту'  || message.channel.name === 'бот') {
+       if (message.channel.name === 'команды-боту' || message.channel.name === 'бот') {
                 const user = message.mentions.users.first();
                 if (user) {
                     const member = message.guild.member(user);
