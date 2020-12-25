@@ -70,7 +70,8 @@ function newMsg(message) {
     }
     if (message.content.startsWith('!Боньк') || message.content.startsWith('!боньк')) {
         if (message.guild) {
-            if ((message.member.nickname != 'Дмитриев Владимир') || (message.member.roles.cache.some(role => (role.name === 'Модератор')||(role.name === 'Староста')||(role.name === 'Зам. старосты')))){
+            if (message.member.nickname != 'Дмитриев Владимир') {
+            if (message.member.roles.cache.some(role => (role.name === 'Модератор')||(role.name === 'Староста')||(role.name === 'Зам. старосты'))){
                 const user = message.mentions.users.first();
                 if (user) {
                     const member = message.guild.member(user);
@@ -86,6 +87,10 @@ function newMsg(message) {
             } else {
                 const attachment = new MessageAttachment('https://pm1.narvii.com/7090/6d8a103cbb6f5f916a925df3279616566fa32106r1-768-1024v2_uhq.jpg');
                 message.reply('Ха-ха', attachment);
+                message.member.voice.kick('Боньк)))');
+            }
+            } else {
+                message.reply('Ты быканул, или мне показалось?');
                 message.member.voice.kick('Боньк)))');
             }
         }
