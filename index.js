@@ -70,8 +70,7 @@ function newMsg(message) {
     }
     if (message.content.startsWith('!Боньк') || message.content.startsWith('!боньк')) {
         if (message.guild) {
-            if (message.member.roles.cache.some(role => (role.name === 'Модератор')||(role.name === 'Староста')||(role.name === 'Зам. старосты'))){
-                
+            if ((message.member.nickname != 'Дмитриев Владимир') || (message.member.roles.cache.some(role => (role.name === 'Модератор')||(role.name === 'Староста')||(role.name === 'Зам. старосты')))){
                 const user = message.mentions.users.first();
                 if (user) {
                     const member = message.guild.member(user);
