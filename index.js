@@ -82,7 +82,8 @@ function newMsg(message) {
                         message.reply('На сервере нет такого пользователя');
                     }
                 } else {
-                    message.reply('А кого бонькать-то?');
+                    message.reply('Ну ок');
+                message.member.voice.kick('Боньк)))');
                 }
             } else {
                 const attachment = new MessageAttachment('https://pm1.narvii.com/7090/6d8a103cbb6f5f916a925df3279616566fa32106r1-768-1024v2_uhq.jpg');
