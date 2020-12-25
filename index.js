@@ -4,7 +4,7 @@ const client = new Client();
 client.on('message', newMsg);
 client.on("guildMemberAdd", async member => {
     const joinRole = member.guild.roles.cache.find(role => role.name === 'Гость');
-    await member.roles.add(joinRole)
+    await member.roles.add(joinRole);
 });
 
 function newMsg(message) {
@@ -34,11 +34,11 @@ function newMsg(message) {
         }
     if (message.content.startsWith('!help')) {
             if (message.channel.name === 'команды-боту'  || message.channel.name === 'бот') {
-                message.channel.send("!addrole\n!removerole\n!боньк");
-                }
+                message.channel.send("```!addrole\n!removerole\n!боньк```");
+                
             } 
     }
-    if (message.content.startsWith('!addrole ')) {
+    if (message.content.startsWith('!addrole')) {
             if (message.channel.name === 'команды-боту'  || message.channel.name === 'бот') {
                 const user = message.mentions.users.first();
                 if (user) {
@@ -53,7 +53,7 @@ function newMsg(message) {
                 }
             } 
     }
-    if (message.content.startsWith('!removerole ')) {
+    if (message.content.startsWith('!removerole')) {
        if (message.channel.name === 'команды-боту' || message.channel.name === 'бот') {
                 const user = message.mentions.users.first();
                 if (user) {
@@ -68,9 +68,10 @@ function newMsg(message) {
                 }
             }
     }
-    if (message.content.startsWith('!Боньк ') || message.content.startsWith('!боньк ')) {
+    if (message.content.startsWith('!Боньк') || message.content.startsWith('!боньк')) {
         if (message.guild) {
-            if (message.member.roles.cache.some(role => role.name === 'Модератор')){
+            if (message.member.roles.cache.some(role => (role.name === 'Модератор')||(role.name === 'Староста')||(role.name === 'Зам. старосты'))){
+                
                 const user = message.mentions.users.first();
                 if (user) {
                     const member = message.guild.member(user);
@@ -88,6 +89,12 @@ function newMsg(message) {
                 message.reply('Ха-ха', attachment);
                 message.member.voice.kick('Боньк)))');
             }
+        }
+    }
+    if (message.content.startsWith('!clear')) {
+        if (message.channel.name === 'команды-боту' || message.channel.name === 'бот') {
+            var n = parseInt(message.content.substring(6), 10);
+            message.channel.bulkDelete(n);
         }
     }
 }
