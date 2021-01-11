@@ -33,7 +33,7 @@ function newMsg(message) {
             }
         }
     if (message.content.startsWith('!!help')) {
-            if (message.channel.name === 'команды-боту'  || message.channel.name === 'бот') {
+            if (message.member.roles.cache.some(role => (role.name === 'Модератор')||(role.name === 'Староста')||(role.name === 'Зам. старосты'))) {
                 message.channel.send("```!addrole @username @rolename\n!removerole @username @rolename\n!боньк @username\n!clear number```");
                 
             } 
