@@ -97,9 +97,9 @@ function newMsg(message) {
         }
     }
     if (message.content.startsWith('!clear')) {
-        if (message.channel.name === 'команды-боту' || message.channel.name === 'бот') {
+        if (message.member.roles.cache.some(role => (role.name === 'Модератор')||(role.name === 'Староста')||(role.name === 'Зам. старосты'))) {
             var n = parseInt(message.content.substring(6), 10);
-            message.channel.bulkDelete(n);
+            message.channel.bulkDelete(n + 1);
         }
     }
 }
